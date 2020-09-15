@@ -1,46 +1,49 @@
 import 'package:flutter/material.dart';
+import '../base/drawer.dart';
+import '../base/bottomNav.dart';
+import '../page/ImageListPage.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class HomePage extends StatelessWidget {
   @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '点击次数:',
+  Widget build(BuildContext content) {
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text('主页'),
+            // leading: IconButton(
+            //   icon: Icon(Icons.menu),
+            //   tooltip: '菜单',
+            //   onPressed: () => print('you click menu'),
+            // ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'search',
+                onPressed: () => print('search'),
+              ),
+            ],
+            bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.red,
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.payment)),
+                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.card_travel)),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: '加1',
-        child: Icon(Icons.add),
-      ),
-    );
+            // elevation: 0.0, //阴影
+          ),
+          body: TabBarView(
+            children: [
+              Icon(Icons.payment, size: 120, color: Colors.black12),
+              Icon(Icons.directions_bike, size: 120, color: Colors.black),
+              ImageListPage()
+            ],
+          ),
+          drawer: MyDrawer(),
+          bottomNavigationBar: BottomNav(),
+        ));
   }
 }

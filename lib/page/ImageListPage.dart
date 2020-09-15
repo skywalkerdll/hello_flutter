@@ -1,17 +1,51 @@
 import 'package:flutter/material.dart';
+import '../model/post.dart';
 
-//import 'package:cached_network_image/cached_network_image.dart';
+class ImageListPage extends StatelessWidget {
+  Widget _listbuilder(BuildContext context, int index) {
+    return Container(
+      // color: Colors.red,
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          Image.network(
+            posts[index].imageUrl,
+            loadingBuilder: (context, child, loadingProgress) {
+              if (loadingProgress == null) return child;
 
-class ImageListPage extends StatefulWidget {
-  @override
-  _ImageListPageState createState() => _ImageListPageState();
-}
+              return Container(
+                alignment: Alignment.center,
+                child: CircularProgressIndicator(
+                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+                  value: loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes
+                      : null,
+                ),
+              );
+            },
+          ),
+          SizedBox(height: 16),
+          Text(
+            posts[index].title,
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          Text(
+            posts[index].author,
+            style: Theme.of(context).textTheme.subtitle1,
+          ),
+        ],
+      ),
+    );
+  }
 
-class _ImageListPageState extends State<ImageListPage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: Text('adsfasdf'),
+    return Center(
+      child: ListView.builder(
+        itemBuilder: _listbuilder,
+        itemCount: posts.length,
+      ),
     );
   }
 }

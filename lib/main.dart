@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'page/ImageListPage.dart';
+import 'page/LoginPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext content) {
     return MaterialApp(
-      title: 'hello_flutter',
+      home: LoginPage(), //首页为登录页
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.blue, //主题颜色
       ),
-      home: ImageListPage(),
     );
   }
 }

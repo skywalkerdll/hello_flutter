@@ -7,13 +7,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _ztNameController = new TextEditingController();
+  // TextEditingController _ztNameController = new TextEditingController();
   TextEditingController _unameController = new TextEditingController();
   TextEditingController _pwdController = new TextEditingController();
   GlobalKey _formKey = new GlobalKey<FormState>();
-  var _isShowClear = false;
+  var _isShowClear = false; //显示清空按钮
 
-  /// 头部
+  /// 头部log组件
   Widget buildTopWidget(BuildContext context) {
     double height = 150.0;
     double width = MediaQuery.of(context).size.width;
@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
 
                 ///形状
-                shape: BoxShape.circle,
+                //shape: BoxShape.circle,
 
                 ///图片
                 image: DecorationImage(
@@ -56,6 +56,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //是否自动调整body属性控件的大小，以避免脚手架底部被覆盖
+      resizeToAvoidBottomPadding: false,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
         child: Form(
@@ -64,19 +66,19 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: <Widget>[
               buildTopWidget(context),
-              TextFormField(
-                autofocus: true,
-                controller: _ztNameController,
-                decoration: InputDecoration(
-                  hintText: "账套",
-                  icon: Icon(Icons.person),
-                ),
+              // TextFormField(
+              //   autofocus: true,
+              //   controller: _ztNameController,
+              //   decoration: InputDecoration(
+              //     hintText: "账套",
+              //     icon: Icon(Icons.person),
+              //   ),
 
-                // 校验用户名
-                validator: (v) {
-                  return v.trim().length > 0 ? null : "请选择账套";
-                },
-              ),
+              //   // 校验用户名
+              //   validator: (v) {
+              //     return v.trim().length > 0 ? null : "请选择账套";
+              //   },
+              // ),
               TextFormField(
                 autofocus: true,
                 controller: _unameController,
@@ -151,8 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 new MaterialPageRoute(
-                                    builder: (context) =>
-                                        new HomePage(title: '主页')),
+                                    builder: (context) => new HomePage()),
                               );
                             } else {
                               AlertDialog();
