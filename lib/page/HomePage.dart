@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
             actions: <Widget>[
               IconButton(
                 icon: Icon(Icons.search),
-                tooltip: 'search',
+                tooltip: '搜索',
                 onPressed: () => print('search'),
               ),
             ],
