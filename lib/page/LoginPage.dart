@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   var _isShowClear = false; //显示清空按钮
 
   /// 头部log组件
+  /// 头部
   Widget buildTopWidget(BuildContext context) {
     double height = 150.0;
     double width = MediaQuery.of(context).size.width;
@@ -22,11 +23,11 @@ class _LoginPageState extends State<LoginPage> {
       height: height,
       //color: Colors.blue[400],
       child: Stack(
-        overflow: Overflow.visible, // 超出部分显示
+        // overflow: Overflow.visible, // 超出部分显示
         children: <Widget>[
           Positioned(
-            left: (width - 90) / 2.0,
-            top: height - 100,
+            left: (width - 90 - 40) / 2.0,
+            top: height - 120,
             child: Container(
               width: 90.0,
               height: 90.0,
@@ -37,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
 
                 ///形状
-                //shape: BoxShape.circle,
+                shape: BoxShape.circle,
 
                 ///图片
                 image: DecorationImage(

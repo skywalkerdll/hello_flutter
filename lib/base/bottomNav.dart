@@ -24,7 +24,7 @@ class _BottomNavState extends State<BottomNav> {
           BottomNavigationBarItem(icon: Icon(Icons.history), label: '历史'),
           BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: '单元'),
           BottomNavigationBarItem(icon: Icon(Icons.account_box), label: '盒子'),
-          BottomNavigationBarItem(icon: Icon(Icons.card_travel), label: '卡包1'),
+          BottomNavigationBarItem(icon: Icon(Icons.card_travel), label: '卡包2'),
         ]);
   }
 }
