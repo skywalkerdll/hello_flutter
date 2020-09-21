@@ -7,7 +7,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // TextEditingController _ztNameController = new TextEditingController();
+  TextEditingController _ztNameController = new TextEditingController();
   TextEditingController _unameController = new TextEditingController();
   TextEditingController _pwdController = new TextEditingController();
   GlobalKey _formKey = new GlobalKey<FormState>();
@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         // overflow: Overflow.visible, // 超出部分显示
         children: <Widget>[
           Positioned(
-            left: (width - 90 - 40) / 2.0,
+            left: (width - 90 - 50) / 2.0,
             top: height - 120,
             child: Container(
               width: 90.0,
@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569298229946&di=ea4ffb2b140ef40035772bbcee7bbdd5&imgtype=0&src=http%3A%2F%2Fcimg2.163.com%2Fcatchimg%2F20090909%2F8112139_3.jpg'),
+                      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=597090540,2799401554&fm=11&gp=0.jpg'),
                 ),
               ),
             ),
@@ -67,19 +67,19 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: <Widget>[
               buildTopWidget(context),
-              // TextFormField(
-              //   autofocus: true,
-              //   controller: _ztNameController,
-              //   decoration: InputDecoration(
-              //     hintText: "账套",
-              //     icon: Icon(Icons.person),
-              //   ),
+              TextFormField(
+                autofocus: false,
+                controller: _ztNameController,
+                decoration: InputDecoration(
+                  hintText: "账套",
+                  icon: Icon(Icons.list),
+                ),
 
-              //   // 校验用户名
-              //   validator: (v) {
-              //     return v.trim().length > 0 ? null : "请选择账套";
-              //   },
-              // ),
+                // 校验用户名
+                validator: (v) {
+                  return v.trim().length > 0 ? null : "请选择账套";
+                },
+              ),
               TextFormField(
                 autofocus: true,
                 controller: _unameController,
@@ -157,7 +157,22 @@ class _LoginPageState extends State<LoginPage> {
                                     builder: (context) => new HomePage()),
                               );
                             } else {
-                              AlertDialog();
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: Text('提示'),
+                                      content: Text('登录失败'),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          child: Text('确认'),
+                                          onPressed: () {
+                                            Navigator.of(context).pop('ok');
+                                          },
+                                        ),
+                                      ],
+                                    );
+                                  });
                             }
                           }
                         },

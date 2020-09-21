@@ -41,4 +41,8 @@ final List<Post> posts = [
       author: '无',
       imageUrl:
           'https://ww3.sinaimg.cn/bmiddle/007mUHA7ly1gf3atpspu3j30u0190tg3.jpg'),
+  Post(
+      title: '美女',
+      author: '无',
+      imageUrl: 'http://album.mtrend.cn/newsimg/201911/15745884374472.jpg'),
 ];
