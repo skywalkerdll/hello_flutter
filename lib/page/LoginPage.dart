@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/page/HomePage.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
+import '../utils/toast.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -140,12 +142,15 @@ class _LoginPageState extends State<LoginPage> {
                         color: Theme.of(context).primaryColor,
                         textColor: Colors.white,
                         onPressed: () {
+                          //收起键盘
+                          FocusScope.of(context).requestFocus(FocusNode());
                           //在这里不能通过此方式获取FormState，context不对
                           //print(Form.of(context));
 
                           // 通过_formKey.currentState 获取FormState后，
                           // 调用validate()方法校验用户名密码是否合法，校验
                           // 通过后再提交数据。
+
                           if ((_formKey.currentState as FormState).validate()) {
                             //验证通过提交数据
                             if ((this._unameController.text == '002') &&
@@ -157,22 +162,40 @@ class _LoginPageState extends State<LoginPage> {
                                     builder: (context) => new HomePage()),
                               );
                             } else {
-                              showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return AlertDialog(
-                                      title: Text('提示'),
-                                      content: Text('登录失败'),
-                                      actions: <Widget>[
-                                        FlatButton(
-                                          child: Text('确认'),
-                                          onPressed: () {
-                                            Navigator.of(context).pop('ok');
-                                          },
-                                        ),
-                                      ],
-                                    );
-                                  });
+                              Toast.toast(
+                                context,
+                                msg: "登录失败！",
+                                textSize: 16,
+                                showTime: 3 * 1000,
+                                position: ToastPostion.bottom,
+                                bgColor: Colors.black54,
+                              );
+
+                              // Fluttertoast.showToast(
+                              //     msg: "登录失败",
+                              //     toastLength: Toast.LENGTH_SHORT,
+                              //     gravity: ToastGravity.CENTER,
+                              //     timeInSecForIosWeb: 1,
+                              //     backgroundColor: Colors.black54,
+                              //     textColor: Colors.white,
+                              //     fontSize: 16.0);
+
+                              // showDialog(
+                              //     context: context,
+                              //     builder: (context) {
+                              //       return AlertDialog(
+                              //         title: Text('提示'),
+                              //         content: Text('登录失败'),
+                              //         actions: <Widget>[
+                              //           FlatButton(
+                              //             child: Text('确认'),
+                              //             onPressed: () {
+                              //               Navigator.of(context).pop('ok');
+                              //             },
+                              //           ),
+                              //         ],
+                              //       );
+                              //     });
                             }
                           }
                         },
