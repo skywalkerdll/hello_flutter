@@ -4,11 +4,10 @@
     <item android:drawable="@android:color/white" />
 
     <!-- You can insert your own image assets here -->
+         <!-- center:居中 ，fill:全屏 -->
     <item>
-        <bitmap
-         android:width="90dp"
- android:height="90dp"
-            android:gravity="center"
+        <bitmap     
+            android:gravity="fill" 
             android:src="@mipmap/launch_image" />
     </item>
 </layer-list>
