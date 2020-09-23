@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/page/HomePage.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
+import 'MyHomePage.dart';
 import '../utils/toast.dart';
 
 class LoginPage extends StatefulWidget {
@@ -159,7 +160,9 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 new MaterialPageRoute(
-                                    builder: (context) => new HomePage()),
+                                    builder: (context) => new MyHomePage(
+                                          title: 'asdfasdf',
+                                        )),
                               );
                             } else {
                               Toast.toast(

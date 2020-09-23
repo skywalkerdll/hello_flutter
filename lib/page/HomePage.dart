@@ -9,8 +9,10 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+          //backgroundColor: Colors.transparent, //把scaffold的背景色改成透明
           appBar: AppBar(
             centerTitle: true,
+            //backgroundColor: Colors.transparent, //把appbar的背景色改成透明
             title: Text('主页'),
             // leading: IconButton(
             //   icon: Icon(Icons.menu),
