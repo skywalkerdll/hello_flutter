@@ -160,9 +160,10 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 new MaterialPageRoute(
-                                    builder: (context) => new MyHomePage(
-                                          title: 'asdfasdf',
-                                        )),
+                                    // builder: (context) => new MyHomePage(
+                                    //       title: 'asdfasdf',
+                                    //     )),
+                                    builder: (context) => new HomePage()),
                               );
                             } else {
                               Toast.toast(
