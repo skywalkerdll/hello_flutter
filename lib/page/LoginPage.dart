@@ -41,13 +41,12 @@ class _LoginPageState extends State<LoginPage> {
                 ],
 
                 ///形状
-                shape: BoxShape.circle,
+                //shape: BoxShape.circle,
 
                 ///图片
                 image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=597090540,2799401554&fm=11&gp=0.jpg'),
+                  fit: BoxFit.contain,
+                  image: new AssetImage('images/logo.png'),
                 ),
               ),
             ),
@@ -59,6 +58,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    this._ztNameController.text = '财务';
+    this._unameController.text = '002';
     return Scaffold(
       //是否自动调整body属性控件的大小，以避免脚手架底部被覆盖
       resizeToAvoidBottomPadding: false,

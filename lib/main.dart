@@ -5,7 +5,7 @@ import 'page/LoginPage.dart';
 
 void main() {
   if (Platform.isAndroid) {
-    SystemChrome.setEnabledSystemUIOverlays([]); //全屏，不显示状态栏，也不现实底部虚拟键盘
+    //SystemChrome.setEnabledSystemUIOverlays([]); //全屏，不显示状态栏，也不现实底部虚拟键盘
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, //状态栏透明
         statusBarIconBrightness: Brightness.dark));

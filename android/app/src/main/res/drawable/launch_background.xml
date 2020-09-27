@@ -4,10 +4,19 @@
     <item android:drawable="@android:color/white" />
 
     <!-- You can insert your own image assets here -->
-         <!-- center:居中 ，fill:全屏 -->
+    <!-- 
+      android:gravity——当位图大小比它所在的容器小的时候，使用这个属性来决定位图在容器中的位置。
+      可取的值 有：top、bottom、left、right、    
+       center_vertical、fill_vertical（纵向缩放位图使之与容器等 高）、
+       center_horizontal、fill_horizontal（横向缩放位图使之与容器等宽）、       
+       center、 fill（纵向与橫向都缩放使之完全铺满容器，这也是默认值）、
+       clip_vertical（呃。。。）、 
+       clip_horizontal（呃。。。）。
+
+    -->
     <item>
         <bitmap     
-            android:gravity="fill" 
+            android:gravity="center" 
             android:src="@mipmap/launch_image" />
     </item>
 </layer-list>
