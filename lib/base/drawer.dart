@@ -25,7 +25,7 @@ class MyDrawer extends StatelessWidget {
               ),
               CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "http://b-ssl.duitang.com/uploads/item/201707/01/20170701155239_2E8zH.jpeg"),
+                    "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1467001587,2827454898&fm=26&gp=0.jpg"),
               )
             ],
             onDetailsPressed: () {}, //下拉箭头
@@ -33,7 +33,7 @@ class MyDrawer extends StatelessWidget {
               //背景图片
               image: DecorationImage(
                   image: NetworkImage(
-                      'http://n.sinaimg.cn/eladies/24_img/upload/240d3b09/566/w1300h866/20200828/d207-iyhvyva5953900.jpg'),
+                      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601568133306&di=8977ee985ce6bedb474901de7b2c9765&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F0dd7912397dda144dac4acc9b2b7d0a20df486f8.jpg'),
                   fit: BoxFit.cover //图片不变性裁剪居中显示
                   ),
             ),
@@ -55,7 +55,7 @@ class MyDrawer extends StatelessWidget {
             leading: new CircleAvatar(
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "http://b-ssl.duitang.com/uploads/item/201707/01/20170701155239_2E8zH.jpeg"),
+                    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601568303628&di=f5b5cd3c39ba33dd2d7dad5d345e4d00&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2F00%2F38%2F95%2F14%2Fpic_lib%2Fs960x639%2Ftqyb%2520%252810%2529s960x639.JPG"),
               ),
             ),
             title: Text("其他用户"),
