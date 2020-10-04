@@ -12,6 +12,16 @@ class Post {
 
 final List<Post> posts = [
   Post(
+      title: '灵笼',
+      author: '灵笼',
+      imageUrl:
+          'https://pic4.zhimg.com/v2-be827a3f94115bd71a81adb18e50b096_r.jpg'),
+  Post(
+      title: '流浪者',
+      author: '环太平洋',
+      imageUrl:
+          'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3764673307,1138969089&fm=26&gp=0.jpg'),
+  Post(
       title: 'SUV',
       author: '无',
       imageUrl:

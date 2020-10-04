@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/post.dart';
+import '../page/PhotoViewSimpleScreen .dart';
 
 class ImageListPage extends StatelessWidget {
   Widget _listbuilder(BuildContext context, int index) {
@@ -34,6 +35,19 @@ class ImageListPage extends StatelessWidget {
             posts[index].author,
             style: Theme.of(context).textTheme.subtitle1,
           ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => PhotoViewSimpleScreen(
+                          imageProvider: NetworkImage(posts[index].imageUrl),
+                          heroTag: 'simple',
+                        )),
+              );
+            },
+            child: Text("预览"),
+          )
         ],
       ),
     );
