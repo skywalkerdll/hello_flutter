@@ -9,20 +9,32 @@ class ImageListPage extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
-          Image.network(
-            posts[index].imageUrl,
-            loadingBuilder: (context, child, loadingProgress) {
-              if (loadingProgress == null) return child;
+          InkWell(
+            child: Image.network(
+              posts[index].imageUrl,
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) return child;
 
-              return Container(
-                alignment: Alignment.center,
-                child: CircularProgressIndicator(
-                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
-                  value: loadingProgress.expectedTotalBytes != null
-                      ? loadingProgress.cumulativeBytesLoaded /
-                          loadingProgress.expectedTotalBytes
-                      : null,
-                ),
+                return Container(
+                  alignment: Alignment.center,
+                  child: CircularProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+                    value: loadingProgress.expectedTotalBytes != null
+                        ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes
+                        : null,
+                  ),
+                );
+              },
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => PhotoViewSimpleScreen(
+                          imageProvider: NetworkImage(posts[index].imageUrl),
+                          heroTag: 'simple',
+                        )),
               );
             },
           ),
@@ -36,19 +48,19 @@ class ImageListPage extends StatelessWidget {
           //   style: Theme.of(context).textTheme.subtitle1,
           // ),
 
-          RaisedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (context) => PhotoViewSimpleScreen(
-                          imageProvider: NetworkImage(posts[index].imageUrl),
-                          heroTag: 'simple',
-                        )),
-              );
-            },
-            child: Text("预览"),
-          )
+          // RaisedButton(
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       new MaterialPageRoute(
+          //           builder: (context) => PhotoViewSimpleScreen(
+          //                 imageProvider: NetworkImage(posts[index].imageUrl),
+          //                 heroTag: 'simple',
+          //               )),
+          //     );
+          //   },
+          //   child: Text("预览"),
+          // )
         ],
       ),
     );
