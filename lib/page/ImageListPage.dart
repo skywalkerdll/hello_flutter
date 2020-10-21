@@ -31,10 +31,11 @@ class ImageListPage extends StatelessWidget {
             posts[index].title,
             style: Theme.of(context).textTheme.headline6,
           ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
+          // Text(
+          //   posts[index].author,
+          //   style: Theme.of(context).textTheme.subtitle1,
+          // ),
+
           RaisedButton(
             onPressed: () {
               Navigator.push(
