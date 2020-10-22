@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               TextFormField(
-                autofocus: true,
+                //autofocus: true,
                 controller: _unameController,
                 decoration: InputDecoration(
                   hintText: "用户名或邮箱",
@@ -121,6 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               TextFormField(
+                  autofocus: true,
                   controller: _pwdController,
                   decoration: InputDecoration(
                       hintText: "您的登录密码", icon: Icon(Icons.lock)),
