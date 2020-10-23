@@ -12,7 +12,6 @@
        center、 fill（纵向与橫向都缩放使之完全铺满容器，这也是默认值）、
        clip_vertical（呃。。。）、 
        clip_horizontal（呃。。。）。
-
     -->
     <item>
         <bitmap     
